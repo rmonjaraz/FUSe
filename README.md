@@ -4,7 +4,7 @@ Align, Trim and **F**ilter **U**CE **Se**quences and Alignments
 ---
 This script is an automatized workflow for aligning, triming and filtering alignments, ideally obtained from UCE data, but can be used on any type of alignments. 
 
-* Alignment is performed in [MAFFT](1) as implemented in `phyluce_align_seqcap_align` from [Phyluce](2)
+* Alignment is performed in [MAFFT][1] as implemented in `phyluce_align_seqcap_align` from [Phyluce](2)
 * Trimming of alignments is performed with [trimAL](3) or [Gblocks](4).
 * Filtering of sequences and alignments is as follows:
     * __Sequences__:
@@ -287,7 +287,7 @@ The code within this repository is available under a 3-clause BSD license. See t
 
 ---
 ---
-(1): (https://mafft.cbrc.jp/alignment/software/)
+[1]: https://mafft.cbrc.jp/alignment/software/
 [2]: (https://github.com/faircloth-lab/phyluce)
 [3]: (http://trimal.cgenomics.org/use_of_the_command_line_trimal_v1.2)
 [4]: (https://home.cc.umanitoba.ca/~psgendb/doc/Castresana/Gblocks_documentation.html)
