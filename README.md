@@ -1,8 +1,7 @@
 # FUSe
+
 Align, Trim and **F**ilter **U**CE **Se**quences and Alignments
-
 ---
-
 This script is an automatized workflow for aligning, triming and filtering alignments, ideally obtained from UCE data, but can be used on any type of alignments. 
 
 * Alignment is performed in [MAFFT][1] as implemented in `phyluce_align_seqcap_align` from [Phyluce][2]
@@ -25,7 +24,7 @@ and [Phyluce][2]:
 > Faircloth BC. 2015. PHYLUCE is a software package for the analysis of conserved genomic loci.  Bioinformatics. doi: [10.1093/bioinformatics/btv646](https://doi.org/10.1093/bioinformatics/btv646).
 
 ## Installation
----------------
+---
 FUSe requires for [phyluce][2] to be installed in your system, if phyluce is properly working, FUSe should be able to run without installing any further dependencies. Download or clone this repository and use FUSe.py as a stand-alone program. Alternatevely, you can copy FUSe.py in your phyluce bin folder located in: ```/User/miniconda#/envs/phyluce-X.x.x/bin/``` where '#' is your conda version and "X.x.x" is your version of phyluce. This way, you can call FUSe directly from your phyluce environment.
 
 ```
@@ -35,8 +34,7 @@ chmod 775 /User/miniconda#/envs/phyluce-X.x.x/bin/FUSe.py
 For installing phyluce, detailed intructions can be found [here][6]
 
 ## Execution
---------------
-
+---
 Command line interface, to deploy the menu and options available type:
 ```python FUSe.py -h```
 ```
@@ -117,7 +115,9 @@ The content of "myExploded" directory should be multiple fasta files, one for ea
 cat myExploded/*.fasta > myMonolithic.fasta
 ```
 This monolithich file can be used as input for FUSe
+
 #### Usage:
+
 ##### Required arguments: 
 The following are the only required arguments for running the pipeline, if the user provides only those parameters the entire pipeline will run with default parameters (Check Filtering Options section for more details).
 + **Monolithic Fasta**
@@ -138,8 +138,10 @@ NOTE: Current version of FUSe doesn't support inputting previuously aligned MSAs
 In order to activate the different parts of the workflow we need to provide with the desired flags (see more detailed Examples below), for example if we want to align and filter sequences, we will have to provide the flag ```--filter-alignments```.
 
 ##### Options description:
+
 ###### Aligning
 Current version of FUSe only supports aligning with [MAFFT][1].
+
 ###### Trimming
 FUSe supports two types of trimming:
 
@@ -151,7 +153,8 @@ FUSe supports two types of trimming:
 NOTE: Some recent versions of phyluce doesn't support gblocks, this seems to be an issue with new operating systems, if you have a problem runing gblocks try running the pipeline using trimAL.
 
 ###### Sequence Filtering
----------------------------
+---
+
 ###### Remove Divergent Sequences
 This option is intended to remove outlier sequences resulted from poor alignment, this could be due to sequences of poor quality, contamination or in some cases due to paralogy. This option is implemented in a similar approach as in the software [CIAlign][8]. It calculates pairwise sequence identity across all samples of the same alignment and uses an user defined threshold percentage for removing samples. Defuault parameter (70%) will remove any sequence with a pairwise identity higher than 70, i.e will retain any sequence that is 70% or less divergent that the majority of the alignment. thershold can be modify using the flag ```--divergent```
 
@@ -163,7 +166,8 @@ This option is intended to remove extemely short sequences from alignments, in t
 NOTE: For any of the options above, keep in mind that FUSe will check that after removing sequences there are no columns left containing only "gaps".
 
 ###### Alignment Filtering
----------------------------
+---
+
 ###### Length and Taxa 
 This option is intended to filter out entire alignments based on its composition which might not be useful for downstream analysis, by setting a minimum alingmenth lenght (in bp) to retain with ```--min-length``` and by the minimum number of taxa present in your alignments to retain ```--min-taxa```. Default parameters are ```--min-length``` = 50bp and ```--min-taxa``` = 4 taxa.
 
@@ -181,7 +185,7 @@ FUSe works with FASTA formatted files troughout the workflow for convenience of 
 NOTE: Keep in mind that files from previous steps in the workflow will be in FASTA format, this is an expected behavior of the pipeline, aligments can always be converted to specific formats using ```phyluce_align_convert_one_align_to_another``` or any other software.
 
 ## Examples
-------------------------
+---
 ##### Aligning sequences without filtering:
 This is the most basic function in FUSe will read a input monolithic file and will perform aligning of multiple sequences. The output will be a directory with all loci and samples included in your original monolithic file (no filtering).
 
