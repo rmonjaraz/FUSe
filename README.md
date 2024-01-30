@@ -287,8 +287,6 @@ The code within this repository is available under a 3-clause BSD license. See t
 
 ---
 ---
-[5]: (Calisoga Paper reference Here)
-
 (1): (https://mafft.cbrc.jp/alignment/software/)
 [2]: (https://github.com/faircloth-lab/phyluce)
 [3]: (http://trimal.cgenomics.org/use_of_the_command_line_trimal_v1.2)
