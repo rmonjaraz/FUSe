@@ -4,8 +4,8 @@ Align, Trim and **F**ilter **U**CE **Se**quences and Alignments
 ---
 This script is an automatized workflow for aligning, triming and filtering alignments, ideally obtained from UCE data, but can be used on any type of alignments. 
 
-* Alignment is performed in [MAFFT][1] as implemented in `phyluce_align_seqcap_align` from [Phyluce](2)
-* Trimming of alignments is performed with [trimAL](3) or [Gblocks](4).
+* Alignment is performed in [MAFFT][1] as implemented in `phyluce_align_seqcap_align` from [Phyluce][2]
+* Trimming of alignments is performed with [trimAL][3] or [Gblocks][4].
 * Filtering of sequences and alignments is as follows:
     * __Sequences__:
     Remove Short - Removes short sequences based on a percentage of gaps acording with entire lenght of the 
@@ -17,21 +17,21 @@ This script is an automatized workflow for aligning, triming and filtering align
 
 ## Citation
 ---
-If you use this program please cite [Calisoga Paper](5) 
+If you use this program please cite [Calisoga Paper][5] 
 > Calisoga Paper
 
-and [Phyluce](2):
+and [Phyluce][2]:
 > Faircloth BC. 2015. PHYLUCE is a software package for the analysis of conserved genomic loci.  Bioinformatics. doi: [10.1093/bioinformatics/btv646](https://doi.org/10.1093/bioinformatics/btv646).
 
 ## Installation
 ---
-FUSe requires for [phyluce](2) to be installed in your system, if phyluce is properly working, FUSe should be able to run without installing any further dependencies. Download or clone this repository and use FUSe.py as a stand-alone program. Alternatevely, you can copy FUSe.py in your phyluce bin folder located in: ```/User/miniconda#/envs/phyluce-X.x.x/bin/``` where '#' is your conda version and "X.x.x" is your version of phyluce. This way, you can call FUSe directly from your phyluce environment.
+FUSe requires for [phyluce][2] to be installed in your system, if phyluce is properly working, FUSe should be able to run without installing any further dependencies. Download or clone this repository and use FUSe.py as a stand-alone program. Alternatevely, you can copy FUSe.py in your phyluce bin folder located in: ```/User/miniconda#/envs/phyluce-X.x.x/bin/``` where '#' is your conda version and "X.x.x" is your version of phyluce. This way, you can call FUSe directly from your phyluce environment.
 
 ```
 cp FUSe.py /User/miniconda#/envs/phyluce-X.x.x/bin/
 chmod 775 /User/miniconda#/envs/phyluce-X.x.x/bin/FUSe.py
 ```
-For installing phyluce, detailed intructions can be found [here](6)
+For installing phyluce, detailed intructions can be found [here][6]
 
 ## Execution
 ---
@@ -60,7 +60,7 @@ optional arguments:
   --trimAL              Wether to trim alignments using trimal.
   -a {automated1,gappyout,strict,strictplus,nogaps}, --t-method {automated1,gappyout,strict,strictplus,nogaps}
                         trimAl automated method to use (default: automated1).
-  --gblocks             Wether to trim alignments using gblocks.
+  --gblocks             Wether to trim alignments usig gblocks.
   --b1 B1               The GBLOCKS -b1 proportion (default: 0.5)
   --b2 B2               The GBLOCKS -b2 proportion (default: 0.70)
   --b3 B3               The GBLOCKS -b3 integer value (default: 10)
@@ -95,7 +95,7 @@ Required arguments:
 ```
 
 #### Input File:
-FUSe takes as input a single **Monolithic** [FASTA](7) file, containing all your sequences for all your loci; when using phyluce for processing UCEs this is usually the resulted file from ```phyluce_assembly_get_fastas_from_match_counts```.
+FUSe takes as input a single **Monolithic** [FASTA][7] file, containing all your sequences for all your loci; when using phyluce for processing UCEs this is usually the resulted file from ```phyluce_assembly_get_fastas_from_match_counts```.
 
 Alternatevely, if you don't have a monolithic FASTA file but instead individual loci files that needs to be processed with FUSe we can use the next snippet to get a monolithic file:
 
@@ -140,15 +140,15 @@ In order to activate the different parts of the workflow we need to provide with
 ##### Options description:
 
 ###### Aligning
-Current version of FUSe only supports aligning with [MAFFT](1).
+Current version of FUSe only supports aligning with [MAFFT][1].
 
 ###### Trimming
 FUSe supports two types of trimming:
 
 | Trimming | Options | Default | Reference |
 | :-----------: | ----------- | -------- | -------- | 
-| `--trimAL` | `-a` automated1, gappyout, strict, strictplus, nogaps | `-a automated1` | [trimAL](3) |
-| `--gblocks` | `-b1` B1, `-b2` B2, `-b3` B3, `-b4` B4 | `-b1 0.5`, `-b2 0.7`, `-b3 10`, `-b4 4` | [Gblocks](4) |
+| `--trimAL` | `-a` automated1, gappyout, strict, strictplus, nogaps | `-a automated1` | [trimAL][3] |
+| `--gblocks` | `-b1` B1, `-b2` B2, `-b3` B3, `-b4` B4 | `-b1 0.5`, `-b2 0.7`, `-b3 10`, `-b4 4` | [Gblocks][4] |
 
 NOTE: Some recent versions of phyluce doesn't support gblocks, this seems to be an issue with new operating systems, if you have a problem runing gblocks try running the pipeline using trimAL.
 
@@ -156,7 +156,7 @@ NOTE: Some recent versions of phyluce doesn't support gblocks, this seems to be 
 ---
 
 ###### Remove Divergent Sequences
-This option is intended to remove outlier sequences resulted from poor alignment, this could be due to sequences of poor quality, contamination or in some cases due to paralogy. This option is implemented in a similar approach as in the software [CIAlign](8). It calculates pairwise sequence identity across all samples of the same alignment and uses an user defined threshold percentage for removing samples. Defuault parameter (70%) will remove any sequence with a pairwise identity higher than 70, i.e will retain any sequence that is 70% or less divergent that the majority of the alignment. thershold can be modify using the flag ```--divergent```
+This option is intended to remove outlier sequences resulted from poor alignment, this could be due to sequences of poor quality, contamination or in some cases due to paralogy. This option is implemented in a similar approach as in the software [CIAlign][8]. It calculates pairwise sequence identity across all samples of the same alignment and uses an user defined threshold percentage for removing samples. Defuault parameter (70%) will remove any sequence with a pairwise identity higher than 70, i.e will retain any sequence that is 70% or less divergent that the majority of the alignment. thershold can be modify using the flag ```--divergent```
 
 NOTE: If you are dealing with very divergent samples/species is advised to reduce this parameter accordingly. 
 
@@ -288,10 +288,10 @@ The code within this repository is available under a 3-clause BSD license. See t
 ---
 ---
 [1]: https://mafft.cbrc.jp/alignment/software/
-[2]: (https://github.com/faircloth-lab/phyluce)
-[3]: (http://trimal.cgenomics.org/use_of_the_command_line_trimal_v1.2)
-[4]: (https://home.cc.umanitoba.ca/~psgendb/doc/Castresana/Gblocks_documentation.html)
-[6]: (https://phyluce.readthedocs.io/en/latest/installation.html)
-[7]: (https://www.ncbi.nlm.nih.gov/genbank/fastaformat/)
-[8]: (https://cialign.readthedocs.io/en/latest/pages/introduction.html)
+[2]: https://github.com/faircloth-lab/phyluce
+[3]: http://trimal.cgenomics.org/use_of_the_command_line_trimal_v1.2
+[4]: https://home.cc.umanitoba.ca/~psgendb/doc/Castresana/Gblocks_documentation.html
+[6]: https://phyluce.readthedocs.io/en/latest/installation.html
+[7]: https://www.ncbi.nlm.nih.gov/genbank/fastaformat/
+[8]: https://cialign.readthedocs.io/en/latest/pages/introduction.html
 
