@@ -1,6 +1,6 @@
 # FUSe
-
 Align, Trim and **F**ilter **U**CE **Se**quences and Alignments
+
 ---
 This script is an automatized workflow for aligning, triming and filtering alignments, ideally obtained from UCE data, but can be used on any type of alignments. 
 
