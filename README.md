@@ -283,7 +283,7 @@ contact: ``roy_monrue@hotmail.com``
 
 ### License
 ---
-The code within this repository is available under a 3-clause BSD license. See the `License.txt` file for more information.
+The code within this repository is available under a 3-clause BSD license. See the [License.txt](License.txt) file for more information.
 
 ---
 ---
