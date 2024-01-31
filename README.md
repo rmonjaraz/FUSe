@@ -270,11 +270,12 @@ FUSe.py \
 -p MyOutput -c 12 \
 --trimAL -a gappyout \
 --remove-div -d 0.6 \
---remove-short -d 0.5 \
+--remove-short -s 0.5 \
 --filter-alignments -m 200 \
 --get-completeness -e 0.7 \
 --taxa-count
 ```
+NOTE: In the command above, the use of long flags (`--remove-div`) are used for activating the workflow step, while their corresponding flags (`-d`) are used for changing the parameters asociated with that particular process.
 
 ### Bug Reports
 ---
