@@ -8,12 +8,12 @@ This script is an automatized workflow for aligning, triming and filtering align
 * Trimming of alignments is performed with [trimAL][3] or [Gblocks][4].
 * Filtering of sequences and alignments is as follows:
     * __Sequences__:
-    Remove Short - Removes short sequences based on a percentage of gaps acording with entire lenght of the alignment. 
-    Remove Divergent - Removes divergent sequences based on a pairwise identity comparisson.
+       + Remove Short - Removes short sequences based on a percentage of gaps acording with entire lenght of the alignment. 
+       + Remove Divergent - Removes divergent sequences based on a pairwise identity comparisson.
     * __Alignments__:
-    Number of taxa - Remove alignments that doesn't meet the minimum number of taxa desired.
-    Alignment lenght - Remove alignments that doesn't meet the minimum lenght desired (in bp).
-    Completeness - Generates completenes matricess based on a percentage of taxa (Similar to min_taxa but based on total number of taxa).
+       + Number of taxa - Remove alignments that doesn't meet the minimum number of taxa desired.
+       + Alignment lenght - Remove alignments that doesn't meet the minimum lenght desired (in bp).
+       + Completeness - Generates completenes matricess based on a percentage of taxa (Similar to min_taxa but based on total number of taxa).
 
 ## Citation
 ---
