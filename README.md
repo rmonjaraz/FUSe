@@ -17,8 +17,8 @@ This script is an automatized workflow for aligning, triming and filtering align
 
 ## Citation
 ---
-If you use this program please cite [Calisoga Paper][5] 
-> Calisoga Paper
+If you use this program please cite the [Calisoga Ring Species][5] paper: 
+> Monjaraz-Ruedas, R., Starret, J., Dean Leavitt, D., Hedin, M. 2024. Broken ring speciation in California mygalomorph spiders (Nemesiidae, Calisoga). The American Naturalist. doi: [10.1086/730262](https://doi.org/10.1086/730262)
 
 and [Phyluce][2]:
 > Faircloth BC. 2015. PHYLUCE is a software package for the analysis of conserved genomic loci.  Bioinformatics. doi: [10.1093/bioinformatics/btv646](https://doi.org/10.1093/bioinformatics/btv646).
@@ -292,6 +292,7 @@ The code within this repository is available under a 3-clause BSD license. See t
 [2]: https://github.com/faircloth-lab/phyluce
 [3]: http://trimal.cgenomics.org/use_of_the_command_line_trimal_v1.2
 [4]: https://home.cc.umanitoba.ca/~psgendb/doc/Castresana/Gblocks_documentation.html
+[5]: https://doi.org/10.1086/730262
 [6]: https://phyluce.readthedocs.io/en/latest/installation.html
 [7]: https://www.ncbi.nlm.nih.gov/genbank/fastaformat/
 [8]: https://cialign.readthedocs.io/en/latest/pages/introduction.html
